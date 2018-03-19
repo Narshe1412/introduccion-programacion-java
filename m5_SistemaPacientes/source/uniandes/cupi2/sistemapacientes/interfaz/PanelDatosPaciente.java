@@ -47,6 +47,7 @@ public class PanelDatosPaciente extends JPanel implements ActionListener{
 
 	/**
 	 * Constructor del panel datos de paciente
+	 * @param v pantalla principal de la aplicación para usar como controlador 
 	 */
 	public PanelDatosPaciente(InterfazSistemaPacientes v) {
 		principal = v;
@@ -118,7 +119,7 @@ public class PanelDatosPaciente extends JPanel implements ActionListener{
 		panelInformacion.add(txtEdad);
 
 		// Foto
-		labImagen = new JLabel("FOTO");
+		labImagen = new JLabel();
 		panelFoto.add(labImagen);
 	}
 

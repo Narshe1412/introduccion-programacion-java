@@ -62,6 +62,7 @@ public class PanelDatosMuestra extends JPanel implements ActionListener {
 
 	/**
 	 * Constructor del panel datos de paciente
+	 * @param v pantalla principal de la aplicación para usar como controlador 
 	 */
 	public PanelDatosMuestra(InterfazSistemaPacientes v) {
 		principal = v;

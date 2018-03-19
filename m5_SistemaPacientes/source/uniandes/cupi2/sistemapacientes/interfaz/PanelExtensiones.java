@@ -45,6 +45,7 @@ public class PanelExtensiones extends JPanel implements ActionListener{
 
 	/**
 	 * Constructor del panel datos de paciente
+	 * @param v pantalla principal de la aplicación para usar como controlador 
 	 */
 	public PanelExtensiones(InterfazSistemaPacientes v) {
 		principal = v;
