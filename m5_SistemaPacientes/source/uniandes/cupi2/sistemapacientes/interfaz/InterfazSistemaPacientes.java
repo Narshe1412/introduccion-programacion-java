@@ -52,13 +52,53 @@ public class InterfazSistemaPacientes extends JFrame{
 		sistemaPacientes = new SistemaPacientes();
 		
 		//Paneles de la ventana principal
-		panelDatosPaciente = new PanelDatosPaciente();
-		panelDatosMuestra = new PanelDatosMuestra();
-		panelExtensiones = new PanelExtensiones();
+		panelDatosPaciente = new PanelDatosPaciente(this);
+		panelDatosMuestra = new PanelDatosMuestra(this);
+		panelExtensiones = new PanelExtensiones(this);
 		
 		add(panelDatosPaciente, BorderLayout.NORTH);
 		add(panelDatosMuestra, BorderLayout.CENTER);
 		add(panelExtensiones, BorderLayout.SOUTH);
+	}
+
+	public void avanzar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void retroceder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void calcularEdad() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void calcularHematocrito() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void calcularLeucocito() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void cambiarEnAyunas() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void reqFuncOpcion1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void reqFuncOpcion2() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

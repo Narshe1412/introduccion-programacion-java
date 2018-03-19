@@ -3,15 +3,23 @@ package uniandes.cupi2.sistemapacientes.interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-public class PanelDatosPaciente extends JPanel {
+@SuppressWarnings("serial")
+public class PanelDatosPaciente extends JPanel implements ActionListener{
+	/**
+	 * Interfaz principal de la aplicación
+	 */
+	private InterfazSistemaPacientes principal;
 	// Etiqueta y zona de texto para nombre
 	private JLabel labNombre;
 	private JTextField txtNombre;
@@ -31,11 +39,17 @@ public class PanelDatosPaciente extends JPanel {
 	// Boton y texto para calcular la edad
 	private JButton butEdad;
 	private JTextField txtEdad;
+	
+	/**
+	 * El comando para el boton de calcular la edad del paciente
+	 */
+	private final static String CALCULAR_EDAD = "CALCULAR EDAD";
 
 	/**
 	 * Constructor del panel datos de paciente
 	 */
-	public PanelDatosPaciente() {
+	public PanelDatosPaciente(InterfazSistemaPacientes v) {
+		principal = v;
 		setLayout(new BorderLayout());
 		TitledBorder border = BorderFactory.createTitledBorder("Datos del paciente");
 		border.setTitleColor(Color.BLUE);
@@ -85,6 +99,8 @@ public class PanelDatosPaciente extends JPanel {
 
 		// Edad
 		butEdad = new JButton("Calcular Edad");
+		butEdad.setActionCommand(CALCULAR_EDAD);
+		butEdad.addActionListener(this);
 		txtEdad = new JTextField(10);
 		txtEdad.setEditable(false);
 
@@ -104,5 +120,56 @@ public class PanelDatosPaciente extends JPanel {
 		// Foto
 		labImagen = new JLabel("FOTO");
 		panelFoto.add(labImagen);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String comando = e.getActionCommand();
+		switch(comando) {
+		case CALCULAR_EDAD:
+			principal.calcularEdad();
+			break;
+		}
+	}
+	
+	/**
+	 * Metodo que coloca el valor de la edad en la caja de texto correspondiente de la interfaz
+	 * @param pEdad el valor de la edad en número
+	 */
+	public void mostrarEdad(int pEdad) {
+		txtEdad.setText(pEdad + "");
+	}
+	
+	/**
+	 * Metodo que devuelve el valor de edad en el cuadro de edad 
+	 * @return valor numérico del campo de texto de edad
+	 */
+	public int darEdad() {
+		String rta = txtEdad.getText();
+		return Integer.parseInt(rta);
+	}
+	
+	/**
+	 * Limpia los campos de texto del panel
+	 */
+	public void limpiarCampos() {
+		txtEdad.setText("");
+	}
+	
+	/**
+	 * Actualiza los campos del panel con la informacion del paciente
+	 * @param pNombre nombre del paciente
+	 * @param pApellido apellido del paciente
+	 * @param pSexo sexo del paciente
+	 * @param pFechaN fecha de nacimiento del paciente
+	 * @param pImagen ruta donde se encuentra la foto
+	 */
+	public void actualizarCampos(String pNombre, String pApellido, String pSexo, String pFechaN, String pImagen) {
+		txtNombre.setText(pNombre);
+		txtApellido.setText(pApellido);
+		txtSexo.setText(pSexo);
+		txtFNacimiento.setText(pFechaN);
+		labImagen.setIcon(new ImageIcon(pImagen));
+		txtEdad.setText("");
 	}
 }
