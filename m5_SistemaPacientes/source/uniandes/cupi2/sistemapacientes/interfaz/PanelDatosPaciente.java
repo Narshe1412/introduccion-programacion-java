@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-public class PanelDatosPaciente extends JPanel{
+public class PanelDatosPaciente extends JPanel {
 	// Etiqueta y zona de texto para nombre
 	private JLabel labNombre;
 	private JTextField txtNombre;
@@ -24,15 +24,14 @@ public class PanelDatosPaciente extends JPanel{
 	// Sexo
 	private JLabel labSexo;
 	private JTextField txtSexo;
-	
+
 	// Imagen
 	private JLabel labImagen;
-	
-	//Boton y texto para calcular la edad
+
+	// Boton y texto para calcular la edad
 	private JButton butEdad;
 	private JTextField txtEdad;
-	
-	
+
 	/**
 	 * Constructor del panel datos de paciente
 	 */
@@ -41,20 +40,20 @@ public class PanelDatosPaciente extends JPanel{
 		TitledBorder border = BorderFactory.createTitledBorder("Datos del paciente");
 		border.setTitleColor(Color.BLUE);
 		setBorder(border);
-		
-		//Panel para mostrar la foto del paciente
+
+		// Panel para mostrar la foto del paciente
 		JPanel panelFoto;
-		
-		//Panel para mostrar la información del paciente
+
+		// Panel para mostrar la información del paciente
 		JPanel panelInformacion;
-		
-		//Creacción y localización de los panels
+
+		// Creacción y localización de los panels
 		panelFoto = new JPanel();
 		panelInformacion = new JPanel();
-		
+
 		add(panelFoto, BorderLayout.EAST);
 		add(panelInformacion, BorderLayout.CENTER);
-		
+
 		// Creacción de elementos para la interfaz
 		// Nombre
 		labNombre = new JLabel("Nombre: ");
@@ -62,35 +61,35 @@ public class PanelDatosPaciente extends JPanel{
 		txtNombre.setEditable(false);
 		txtNombre.setBackground(Color.LIGHT_GRAY);
 		txtNombre.setForeground(Color.BLUE);
-		
+
 		// Apellido
 		labApellido = new JLabel("Apellido: ");
 		txtApellido = new JTextField(15);
 		txtApellido.setEditable(false);
 		txtApellido.setBackground(Color.LIGHT_GRAY);
 		txtApellido.setForeground(Color.BLUE);
-		
+
 		// Sexo
 		labSexo = new JLabel("Sexo: ");
 		txtSexo = new JTextField(2);
 		txtSexo.setEditable(false);
 		txtSexo.setBackground(Color.LIGHT_GRAY);
 		txtSexo.setForeground(Color.BLUE);
-		
+
 		// Fecha de nacimiento
 		labFNacimiento = new JLabel("Fecha de nacimiento: ");
 		txtFNacimiento = new JTextField(10);
 		txtFNacimiento.setEditable(false);
 		txtFNacimiento.setBackground(Color.LIGHT_GRAY);
 		txtFNacimiento.setForeground(Color.BLUE);
-		
+
 		// Edad
 		butEdad = new JButton("Calcular Edad");
 		txtEdad = new JTextField(10);
 		txtEdad.setEditable(false);
-		
+
 		// Añadir elementos al panel
-		panelInformacion.setLayout(new GridLayout(6,2));
+		panelInformacion.setLayout(new GridLayout(6, 2));
 		panelInformacion.add(labNombre);
 		panelInformacion.add(txtNombre);
 		panelInformacion.add(labApellido);

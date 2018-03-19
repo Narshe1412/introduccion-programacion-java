@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 
 import uniandes.cupi2.sistemapacientes.mundo.SistemaPacientes;
 
+@SuppressWarnings("serial")
 public class InterfazSistemaPacientes extends JFrame{
 
 	/**
@@ -15,7 +16,6 @@ public class InterfazSistemaPacientes extends JFrame{
 	public static void main(String[] args) {
 		InterfazSistemaPacientes interfaz = new InterfazSistemaPacientes();
 		interfaz.setVisible(true);
-
 	}
 	
 	/**
